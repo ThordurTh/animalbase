@@ -84,26 +84,42 @@ function isDog(animal) {
     return animal.type === "dog";
 }
 
+// SETS SORTING AND SENDS TO sortList()
 function selectSort(event) {
     const sortBy = event.target.dataset.sort;
-    sortList(sortBy);
+    const sortDir = event.target.dataset.sortDirection;
+
+    if (sortDir === "desc") {
+        event.target.dataset.sortDirection = "asc";
+    } else {
+        event.target.dataset.sortDirection = "desc";
+    }
+    sortList(sortBy, sortDir);
 }
 
-function sortList(sortBy) {
+// DETERMINES WHAT TO SORT 
+function sortList(sortBy, sortDir) {
     let sortedList = allAnimals;
+    let direction = 1;
+    if (sortDir === "desc") {
+       direction = 1;
+    } else {
+        direction = -1;
+    }
 
     sortedList = sortedList.sort(sortByProperty);
 
     function sortByProperty(animalA, animalB) {
         if (animalA[sortBy] < animalB[sortBy]) {
-            return -1;
+            return -1 * direction;
         } else {
-            return 1;
+            return 1 * direction;
         }
     }
 
     displayList(sortedList);
 }
+
 
 function displayList(animals) {
     // clear the list
