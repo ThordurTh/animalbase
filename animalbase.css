@@ -31,3 +31,7 @@
 #sorting th.sortby[data-sort-direction="desc"]::after {
   content: "▲"
 }
+
+tbody tr td[data-field="star"] {
+  cursor: pointer;
+}
