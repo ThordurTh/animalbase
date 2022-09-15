@@ -24,3 +24,10 @@
 
   border-right: rgb(171, 219, 252) 1px dotted;
 }
+
+#sorting th.sortby[data-sort-direction="asc"]::after {
+  content: "▼"
+}
+#sorting th.sortby[data-sort-direction="desc"]::after {
+  content: "▲"
+}

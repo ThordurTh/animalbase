@@ -97,15 +97,20 @@ function isDog(animal) {
 
 // SETS SORTING AND SENDS TO sortList()
 function selectSort(event) {
-    settings.sortBy = event.target.dataset.sort;
-    settings.sortDir = event.target.dataset.sortDirection;
+    const sortBy = event.target.dataset.sort;
+    const sortDir = event.target.dataset.sortDirection;
 
-    if (settings.sortDir === "desc") {
+    const oldElement = document.querySelector(`[data-sort='${settings.sortBy}']`);
+    oldElement.classList.remove("sortby");
+
+    event.target.classList.add("sortby");
+
+    if (sortDir === "desc") {
         event.target.dataset.sortDirection = "asc";
     } else {
         event.target.dataset.sortDirection = "desc";
     }
-    setSort(settings.sortBy, settings.sortDir);
+    setSort(sortBy, sortDir);
 }
 
 function setSort(sortBy,sortDir) {
