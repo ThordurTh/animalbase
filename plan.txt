@@ -1,0 +1,15 @@
+Winners
+1. Model
+- add winner status to animal
+2. View
+- add visible winners (fixed values) in the list
+- get the winner status from the model and display that in the list
+3. Controller
+- (fake winners): add a toggle button to make each animal a winner or not
+- design the logic for the rules...
+- implement the logic with lots of basic functions 
+- add user interface to logic:
+4. view: hardcoded dialogue boxes
+    - ask the user if want to remove A or B - or ignore
+    - ask the user if want to remove other - or ignore
+         dynamic dialogue boxes
